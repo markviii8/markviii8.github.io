@@ -1,155 +1,127 @@
 /*
-	Helios by HTML5 UP
+	Directive by HTML5 UP
 	html5up.net | @ajlkn
 	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
 */
 
 /* Basic */
 
-	a {
-		border-bottom: solid 1px #ddd;
-	}
-
 	hr {
-		border-top: solid 1px #777;
-		border-bottom: solid 1px #777;
+		border-top: solid 1px #cccccc;
 	}
 
-	.timestamp {
-		color: #777;
+	blockquote {
+		border-left: solid 0.5em #cccccc;
 	}
 
 /* Section/Article */
 
-	section > .last-child, section.last-child, article > .last-child, article.last-child {
-		margin-bottom: 0;
+	header.major {
+		border-color: #cccccc;
 	}
 
-/* List */
+		header.major p {
+			border-top: solid 1px #cccccc;
+		}
 
-	ul.divided li {
-		border-top: solid 1px #777;
-	}
-
-	ul.menu li {
-		border-left: solid 1px #777;
-	}
-
-	ul.icons {
-		background: #333;
-		-ms-behavior: url("assets/js/ie/PIE.htc");
+	footer.major {
+		border-color: #cccccc;
 	}
 
 /* Button */
 
+	input[type="submit"],
+	input[type="reset"],
+	input[type="button"],
 	.button {
+		position: relative;
 		-ms-behavior: url("assets/js/ie/PIE.htc");
 	}
 
-/* Icons */
+		input[type="submit"].alt,
+		input[type="reset"].alt,
+		input[type="button"].alt,
+		.button.alt {
+			border: solid 1px #cccccc;
+		}
 
-	.icon.circled {
+/* Form */
+
+	input[type="text"],
+	input[type="password"],
+	input[type="email"],
+	select,
+	textarea {
+		position: relative;
+		border: solid 1px #cccccc;
 		-ms-behavior: url("assets/js/ie/PIE.htc");
+	}
+
+/* Image */
+
+	.image {
+		border: 0;
+		display: inline-block;
+		position: relative;
+	}
+
+		.image:after {
+			display: none;
+		}
+
+/* Box */
+
+	.box {
+		border: solid 1px #cccccc;
 	}
 
 /* Header */
 
 	#header {
+		background-image: url("../../images/header.jpg") !important;
+		background-size: cover !important;
+		background-position: scroll !important;
 		-ms-behavior: url("assets/js/ie/backgroundsize.min.htc");
+		padding: 8em 0 !important;
+		color: #ffffff;
 	}
 
-	body.homepage #header {
-		height: auto;
-		min-height: 0;
-		padding: 12em 0 12em 0;
-	}
-
-		body.homepage #header:after {
-			display: none;
+		#header a {
+			color: inherit;
 		}
 
-/* Nav */
-
-	#nav > ul:before, #nav > ul:after {
-		border-top: solid 1px #777;
-		border-bottom: solid 1px #777;
-	}
-
-	#nav > ul > li {
-		-ms-behavior: url("assets/js/ie/PIE.htc");
-	}
-
-		#nav > ul > li.active {
-			border-color: #999;
+		#header:before {
+			content: '';
+			background-image: url("images/overlay.png");
+			position: absolute;
+			left: 0;
+			top: 0;
+			width: 100%;
+			height: 100%;
+			display: block;
+			z-index: 0;
 		}
 
-	.dropotron {
-		background: #fff;
-		-ms-behavior: url("assets/js/ie/PIE.htc");
-	}
-
-		.dropotron li {
-			border-color: #eee;
-			padding-right: 1em;
-			color: #5b5b5b;
+		#header > * {
+			position: relative;
+			z-index: 1;
 		}
 
-		.dropotron.level-0 {
-			box-shadow: none !important;
-			margin-top: 1em;
+		#header .logo {
+			-ms-behavior: url("assets/js/ie/PIE.htc");
 		}
-
-/* Carousel */
-
-	.carousel .forward, .carousel .backward {
-		border-radius: 100%;
-		background-color: #483949;
-		width: 7em;
-		height: 7em;
-		margin-top: -3.5em;
-		border-radius: 100%;
-		-ms-behavior: url("assets/js/ie/PIE.htc");
-	}
-
-		.carousel .forward:before, .carousel .backward:before {
-			display: none;
-		}
-
-	.carousel .forward {
-		right: -3.5em;
-	}
-
-	.carousel .backward {
-		left: -3.5em;
-	}
 
 /* Footer */
 
-	#footer ul.divided li {
-		border-color: #3B373C;
+	#footer {
+		background-image: none !important;
+		margin-top: 0 !important;
+		padding: 4em 0 !important;
+		color: #ffffff;
 	}
 
-	#footer ul.menu li {
-		border-color: #3B373C;
+/* Main */
+
+	#main {
+		padding: 4em 0;
 	}
-
-	#footer hr {
-		border-color: #3B373C;
-	}
-
-	#footer .icons {
-		background: #2F2930;
-	}
-
-	#footer .copyright {
-		color: #777;
-	}
-
-		#footer .copyright a {
-			color: #aaa;
-			border: 0;
-		}
-
-			#footer .copyright a:hover {
-				color: #ccc;
-			}
