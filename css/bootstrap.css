@@ -1123,6 +1123,7 @@ img {
   display: block;
   max-width: 100%;
   height: auto;
+  position: relative;
 }
 .img-rounded {
   border-radius: 6px;
@@ -6755,3 +6756,46 @@ button.close {
   }
 }
 /*# sourceMappingURL=bootstrap.css.map */
+
+#cf {
+  height: 281px;
+  width: 450px;
+  margin: 0 auto;
+}
+
+#cf img.bottom {
+  -webkit-transition: opacity 1s ease-in-out;
+  -moz-transition: opacity 1s ease-in-out;
+  -o-transition: opacity 1s ease-in-out;
+  transition: opacity 1s ease-in-out;
+}
+
+#cf img.top {
+  -webkit-transition: opacity 1s ease-in-out;
+  -moz-transition: opacity 1s ease-in-out;
+  -o-transition: opacity 1s ease-in-out;
+  transition: opacity 1s ease-in-out;
+}
+
+@keyframes cf3FadeInOut {
+0% {
+opacity:1;
+}
+45% {
+opacity:1;
+}
+55% {
+opacity:0;
+}
+100% {
+opacity:0;
+}
+}
+
+#cf img.top {
+animation-name: cf3FadeInOut;
+animation-timing-function: ease-in-out;
+animation-iteration-count: infinite;
+animation-duration: 10s;
+animation-direction: alternate;
+}
