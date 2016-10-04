@@ -205,7 +205,7 @@ d3.csv("adresses.csv", function(error, data) {
     .r(d3.scale.log().domain([1,485]))
     .elasticY(true)
     .elasticX(true)
-    .yAxisPadding(1)    //.xAxisPadding(500)
+    .yAxisPadding(14)    //.xAxisPadding(500)
     .renderHorizontalGridLines(true)
     .renderVerticalGridLines(true)    //.xAxisLabel('Creation Date')    //.yAxisLabel('Creation Count')
     .renderLabel(false)    //.label(function(d) {    //  return d.key;    //})    //.renderTitle(true)
