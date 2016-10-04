@@ -24,12 +24,21 @@
         <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
     <![endif]-->
 
+    <script>
+
+    /*.navbar-inverse {
+      background-color: rgb(236, 124, 35);
+      border-color: rgb(236, 124, 35);
+    }*/
+
+    </script>
+
 </head>
 
 <body>
 
     <!-- Navigation -->
-    <nav class="navbar navbar-inverse navbar-fixed-top" role="navigation">
+    <nav class="navbar navbar-inverse navbar-fixed-top" role="navigation" style="background-color: #ec7c23; border-color: #ec7c23; color: white">
         <div class="container">
             <!-- Brand and toggle get grouped for better mobile display -->
             <div class="navbar-header">
@@ -39,7 +48,7 @@
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
                 </button>
-                <a class="navbar-brand" href="https://ca.linkedin.com/in/markviii8" target="_blank">Mark Alabanza</a>
+                <a class="navbar-brand" href="https://ca.linkedin.com/in/markviii8" target="_blank" style="color: white">Mark Alabanza</a>
             </div>
             <!-- Collect the nav links, forms, and other content for toggling -->
             <!--<div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
@@ -91,11 +100,47 @@
                 <hr>
 
                 <!-- Post Content -->
-                <p class="lead">Here is a <a href="missing.html" target="_blank">live demo</a> of the visualization.</p>
+
+                <p>Here is a <a href="missing.html" target="_blank">live demo</a> of the visualization. Please let <a href="https://twitter.com/markviii8" target="_blank">me</a> know of any issues in loading the web page.</p>
+                <p class="lead"></br>Visualizing Missing Data</p>
                 <p>This is an implementation of the native crossfilter support in the <a href="https://dc-js.github.io/dc.js/" target="_blank">dc.js</a> javascript charting library. The application is on a typical table of addresses extracted from a database that supports an ERP system. This provides a view of that table with the ability to filter the data through multiple columns.</p>
-                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eos, doloribus, dolorem iusto blanditiis unde eius illum consequuntur neque dicta incidunt ullam ea hic porro optio ratione repellat perspiciatis. Enim, iure!</p>
-                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Error, nostrum, aliquid, animi, ut quas placeat totam sunt tempora commodi nihil ullam alias modi dicta saepe minima ab quo voluptatem obcaecati?</p>
-                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Harum, dolor quis. Sunt, ut, explicabo, aliquam tenetur ratione tempore quidem voluptates cupiditate voluptas illo saepe quaerat numquam recusandae? Qui, necessitatibus, est!</p>
+                <p>Initial input into the vendor master data is controlled by field interrogation techniques such as missing data checks and zero-value checks. However, subsequent actions on the database may result in unintended changes to data. Data migration, version updates, and data scrubbing are some of the situations when data is vulnerable to this.</p>
+                <p class="lead"></br>The Data</p>
+                <p>A fictitious table named 'addresses' was created using <a href=”http://www.generatedata.com/”>generatedata.com</a>. The following lists the field names and their data types.
+                  <ul>
+                    <li>address_number, integer autoincrement</li>
+                    <li>creation_date, date</li>
+                    <li>name1, character</li>
+                    <li>search_term, character</li>
+                    <li>account_group, character</li>
+                    <li>langu, character</li>
+                    <li>country, character</li>
+                    <li>region, character</li>
+                    <li>city, character</li>
+                    <li>city_postal_code, character</li>
+                    <li>house_number, character</li>
+                    <li>street, character</li>
+                    <li>longitude, numeric</li>
+                    <li>latitude, numeric</li>
+                    <li>telephone_number, character</li>
+                    <li>smtp_address, character</li>
+                    <li>tax_number, character</li>
+                    <li>tax_jurisdiction, character</li>
+                  </ul>
+                </p>
+                <p>The table is saved as a csv file for loading using the built-in support of <a href="https://d3js.org/">d3.js</a>. All commas within a data value is removed using the 'Find and Replace' function of any spreadsheet. All characters that are not in UTF-8 format are also replaced appropriately.</p>
+                <p class="lead"></br>The Bubble Chart</p>
+                <p><img src="bubbles.png"/></p>
+                <p></p>
+                <p class="lead"></br>Bar Chart as a filter</p>
+                <p><img src="barchart.png"/></p>
+                <p></p>
+                <p class="lead"></br>Filtering by required fields</p>
+                <p><img src="required.png"/></p>
+                <p></p>
+                <p class="lead"></br>Filtering by optional fields</p>
+                <p><img src="optional.png"/></p>
+                <p></p>
 
                 <hr>
 
