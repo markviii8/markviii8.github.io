@@ -101,7 +101,7 @@
 
                 <!-- Post Content -->
 
-                <p>Here is a <a href="missing.html" target="_blank">live demo</a> of the visualization. Please let <a href="https://twitter.com/markviii8" target="_blank">me</a> know of any issues in loading the web page.</p>
+                <p>Click <a href="https://markviii8.github.io/missing.html" target="_blank"> here </a>for a live demo of the visualization. Please let <a href="https://twitter.com/markviii8" target="_blank">me</a> know of any issues in loading the web page.</p>
                 <p class="lead"></br>Visualizing Missing Data</p>
                 <p>This is an implementation of the native crossfilter support in the <a href="https://dc-js.github.io/dc.js/" target="_blank">dc.js</a> javascript charting library. The application is on a typical table of addresses extracted from a database that supports an ERP system. This provides a view of that table with the ability to filter the data through multiple columns.</p>
                 <p>Initial input into the vendor master data is controlled by field interrogation techniques such as missing data checks and zero-value checks. However, subsequent actions on the database may result in unintended changes to data. Data migration, version updates, and data scrubbing are some of the situations when data is vulnerable to this.</p>
@@ -130,17 +130,29 @@
                 </p>
                 <p>The table is saved as a csv file for loading using the built-in support of <a href="https://d3js.org/">d3.js</a>. All commas within a data value is removed using the 'Find and Replace' function of any spreadsheet. All characters that are not in UTF-8 format are also replaced appropriately.</p>
                 <p class="lead"></br>The Bubble Chart</p>
-                <p><img src="bubble.png"/></p>
-                <p></p>
+                <p>The different dates on which vendor records were created are plotted in the bubble chart. The radius of each bubble displays the number of records created in that day. A relatively large circle would indicate a day where there was a massive number of creations. This should coincide with a major activity such as a data migration.</p>
+                <p>Putting the mouse pointer over the green circle will reveal a tooltip with the text for the number of vendors created (25) and the date of creation (Jan 01 2016). Clicking it will automatically change all other data in the web page. The top most line now reads “Vendor Address Data 25 selected out of 100 records Reset All.” The table at the bottom show only the 25 records that were created on 2016-01-01.</p>
+                <p style="border-style: solid; border-width: 1px;"><img src="bubbles.jpg"/></p>
                 <p class="lead"></br>Bar Chart as a filter</p>
-                <p><img src="barchart.png"/></p>
-                <p></p>
-                <p class="lead"></br>Filtering by required fields</p>
-                <p><img src="required.png"/></p>
-                <p></p>
-                <p class="lead"></br>Filtering by optional fields</p>
-                <p><img src="optional.png"/></p>
-                <p></p>
+                <p>Just below the bubble chart is a bar chart that was made thin just enough to act as a ..All of the different ways to break down the 64 records created in 2016 are shown in the 14 row charts.</p>
+                <p style="border-style: solid; border-width: 1px;"><img src="oneyear.jpg"/></p>
+                <p class="lead"></br>Filtering with the other fields</p>
+                <p>Here is an example that uses the row charts that represent fields for filtering the table.</p>
+                <div style="border-style: solid; border-width: 1px;">
+                <p style="margin-left: 10px; margin-top: 10px; margin-right: 10px">
+                  Initially, 67 of the 100 records are shown as not having entries in the tax jurisdiction field.</br>
+                  This would be expected of vendors from Canada but not those from the United States.
+                  <img src="jurisdiction329x97.jpg"/></br>
+                  Clicking on the box labelled "null: 67" of the 'Jurisdiction' row chart reveals that 12 of the 67 do not have tax numbers as well. The converse of the revelation is that 2 of the 14 records that do not have tax numbers are filled with tax jurisdictions.</br>
+                  <img src="tax329x97.jpg"/></br>
+                  A subsequent selection of the box now labelled "null: 12" of the 'Tax' row chart changes the breakdown of the 'Vendors by Country field' chart. It now shows that, out of the 12 records that do not have tax numbers and tax jurisdictions, 5 are vendors from Canada and 4 are vendors from the United States.</br>
+                  <img src="ustaxjurisdiction562x275.jpg"/></br>
+                  Clicking on the row for "United States" in the chart 'Vendors by Country field' confirms that all 4 of these do not have tax numbers and tax jurisdictions with both the 'Tax' and 'Jurisdiction' row charts having boxes labelled "null: 4."</br>
+                  <img src="four489x331.jpg"/>
+                </p>
+              </div>
+                <p class="lead"></br>Next steps</p>
+                <p>Further improvements to this crossfilter would be the use of regular expressions to interrogate each field for compliance to data standards. For example, a postal code of a Canadian address should be a combination of letter, digit, letter, space, digit, letter, digit in that order.</p>
 
                 <hr>
 
