@@ -38,7 +38,7 @@
 <body>
 
     <!-- Navigation -->
-    <nav class="navbar navbar-inverse navbar-fixed-top" role="navigation" style="background-color: #ec7c23; border-color: #ec7c23; color: white">
+    <nav class="navbar navbar-inverse navbar-fixed-top" role="navigation" style="background-color: lightslategrey; border-color: lightslategrey;">
         <div class="container">
             <!-- Brand and toggle get grouped for better mobile display -->
             <div class="navbar-header">
@@ -95,18 +95,18 @@
                 <hr>
 
                 <!-- Preview Image -->
-                <a href="missing.html" target="_blank"><img class="img-responsive" src="chart.jpg" alt=""></a>
+                <a href="https://markviii8.github.io/crossfilter/missing.html" target="_blank"><img class="img-responsive" src="crossfilter/img/chart.jpg" alt=""></a>
 
                 <hr>
 
                 <!-- Post Content -->
 
-                <p>Click <a href="https://markviii8.github.io/missing.html" target="_blank"> here </a>for a live demo of the visualization. Please let <a href="https://twitter.com/markviii8" target="_blank">me</a> know of any issues in loading the web page.</p>
+                <p>Click <a href="https://markviii8.github.io/crossfilter/missing.html" target="_blank"> here </a>for a live demo of the visualization. Please let <a href="https://twitter.com/markviii8" target="_blank">me</a> know of any issues in loading the web page.</p>
                 <p class="lead"></br>Visualizing Missing Data</p>
                 <p>This is an implementation of the native crossfilter support in the <a href="https://dc-js.github.io/dc.js/" target="_blank">dc.js</a> javascript charting library. The application is on a typical table of addresses extracted from a database that supports an ERP system. This provides a view of that table with the ability to filter the data through multiple columns.</p>
                 <p>Initial input into the vendor master data is controlled by field interrogation techniques such as missing data checks and zero-value checks. However, subsequent actions on the database may result in unintended changes to data. Data migration, version updates, and data scrubbing are some of the situations when data is vulnerable to this.</p>
                 <p class="lead"></br>The Data</p>
-                <p>A fictitious table named 'addresses' was created using <a href=”http://www.generatedata.com/”>generatedata.com</a>. The following lists the field names and their data types.
+                <p>A fictitious table named 'addresses' was created using <a href=”https://www.generatedata.com/”>generatedata.com</a>. The following lists the field names and their data types.
                   <ul>
                     <li>address_number, integer autoincrement</li>
                     <li>creation_date, date</li>
@@ -132,23 +132,23 @@
                 <p class="lead"></br>The Bubble Chart</p>
                 <p>The different dates on which vendor records were created are plotted in the bubble chart. The radius of each bubble displays the number of records created in that day. A relatively large circle would indicate a day where there was a massive number of creations. This should coincide with a major activity such as a data migration.</p>
                 <p>Putting the mouse pointer over the green circle will reveal a tooltip with the text for the number of vendors created (25) and the date of creation (Jan 01 2016). Clicking it will automatically change all other data in the web page. The topmost line now reads “Vendor Address Data 25 selected out of 100 records Reset All.” The table at the bottom show only the 25 records that were created on 2016-01-01.</p>
-                <p style="border-style: solid; border-width: 1px; border-color: lightgrey;"><img src="bubbles.jpg"/></p>
+                <p style="border-style: solid; border-width: 1px; border-color: lightgrey;"><img src="crossfilter/img/bubbles.jpg"/></p>
                 <p class="lead"></br>Bar Chart as a filter</p>
                 <p>Right below the bubble chart is a bar chart that was made thin enough to act as a range filter. A selection is made by sliding the left slider thumb to the desired lower limit and the right slider thumb to the desired upper limit. The image below shows the selection text as [12/31/2015 -> 12/31/2016] for 64 records. The bubble chart, in turn, displays only the circles within that range. All of the different ways to break down the 64 records created in 2016 are shown in the 14 row charts.</p>
-                <p style="border-style: solid; border-width: 1px; border-color: lightgrey;"><img src="oneyear.jpg"/></p>
+                <p style="border-style: solid; border-width: 1px; border-color: lightgrey;"><img src="crossfilter/img/oneyear.jpg"/></p>
                 <p class="lead"></br>Filtering with the other fields</p>
                 <p>Here is an example that uses the row charts that represent fields for filtering the table.</p>
                 <div style="border-style: solid; border-width: 1px; border-color: lightgrey;">
                 <p style="margin-left: 10px; margin-top: 10px; margin-right: 10px; border-color: #333;">
                   Initially, 67 of the 100 records are shown as not having entries in the tax jurisdiction field.</br>
                   This would be expected of vendors from Canada but not those from the United States.
-                  <img src="jurisdiction329x97.jpg"/></br>
+                  <img src="crossfilter/img/jurisdiction329x97.jpg"/></br>
                   Clicking on the box labelled "null: 67" of the 'Jurisdiction' row chart reveals that 12 of the 67 do not have tax numbers as well. The converse of the revelation is that 2 of the 14 records that do not have tax numbers are filled with tax jurisdictions.</br>
-                  <img src="tax329x97.jpg"/></br>
+                  <img src="crossfilter/img/tax329x97.jpg"/></br>
                   A subsequent selection of the box now labelled "null: 12" of the 'Tax' row chart changes the breakdown of the 'Vendors by Country field' chart. It now shows that, out of the 12 records not having tax numbers and tax jurisdictions, 5 are vendors from Canada and 4 are vendors from the United States.</br>
-                  <img src="ustaxjurisdiction562x275.jpg"/></br>
+                  <img src="crossfilter/img/ustaxjurisdiction562x275.jpg"/></br>
                   Clicking on the row for "United States" in the chart 'Vendors by Country field' confirms that all 4 of these do not have tax numbers and tax jurisdictions with both the 'Tax' and 'Jurisdiction' row charts having boxes labelled "null: 4."</br>
-                  <img src="four489x331.jpg"/>
+                  <img src="crossfilter/img/four489x331.jpg"/>
                 </p>
               </div>
                 <p class="lead"></br>Next steps</p>
