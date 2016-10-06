@@ -1,0 +1,291 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <title>Mapping Cybersecurity Frameworks</title>
+
+    <!-- Bootstrap Core CSS -->
+    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Custom CSS -->
+    <link href="css/blog-post.css" rel="stylesheet">
+
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+        <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+        <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+
+</head>
+
+<body>
+
+    <!-- Navigation -->
+    <nav class="navbar navbar-inverse navbar-fixed-top" role="navigation" style="background-color: lightslategrey; border-color: lightslategrey;">
+        <div class="container">
+            <!-- Brand and toggle get grouped for better mobile display -->
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <a class="navbar-brand" href="https://ca.linkedin.com/in/markviii8" target="_blank" style="color: white">Mark Alabanza</a>
+            </div>
+            <!-- Collect the nav links, forms, and other content for toggling -->
+            <!--<div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+                <ul class="nav navbar-nav">
+                    <li>
+                        <a href="#">About</a>
+                    </li>
+                    <li>
+                        <a href="#">Services</a>
+                    </li>
+                    <li>
+                        <a href="#">Contact</a>
+                    </li>
+                </ul>
+            </div>-->
+            <!-- /.navbar-collapse -->
+        </div>
+        <!-- /.container -->
+    </nav>
+
+    <!-- Page Content -->
+    <div class="container">
+
+        <div class="row">
+
+            <!-- Blog Post Content Column -->
+            <div class="col-lg-8">
+
+                <!-- Blog Post -->
+
+                <!-- Title -->
+                <h1>Mapping Cybersecurity Frameworks</h1>
+
+                <!-- Author -->
+                <p class="lead">
+                    by <a href="https://ca.linkedin.com/in/markviii8" target="_blank">Mark Alabanza, MBA, BSAc, CISA</a>
+                </p>
+
+                <hr>
+
+                <!-- Date/Time -->
+                <p><span class="glyphicon glyphicon-time"></span> 2016 Oct 01</p>
+
+                <hr>
+
+                <!-- Preview Image -->
+                <a href="htmlParallelCoords/pcoords.html" target="_blank"><img class="img-responsive" src="imgCrossfilter/chart900x300.jpg" alt=""></a>
+
+                <hr>
+
+                <!-- Post Content -->
+
+                <p>Click <a href="htmlParallelCoords/pcoords.html" target="_blank"> here </a>for a live demo of the visualization. Please let <a href="https://twitter.com/markviii8" target="_blank">me</a> know of any issues in loading the web page.</p>
+                <p class="lead"></br>Visualizing Missing Data</p>
+                <p>This is an implementation of the native crossfilter support in the <a href="https://dc-js.github.io/dc.js/" target="_blank">dc.js</a> javascript charting library. The application is on a typical table of addresses extracted from a database that supports an ERP system. This provides a view of that table with the ability to filter the data through multiple columns.</p>
+                <p>Initial input into the vendor master data is controlled by field interrogation techniques such as missing data checks and zero-value checks. However, subsequent actions on the database may result in unintended changes to data. Data migration, version updates, and data scrubbing are some of the situations when data is vulnerable to this.</p>
+                <p class="lead"></br>The Data</p>
+                <p>A fictitious table named 'addresses' was created using <a href=”http://www.generatedata.com/”>generatedata.com</a>. The following lists the field names and their data types.
+                  <ul>
+                    <li>address_number, integer autoincrement</li>
+                    <li>creation_date, date</li>
+                    <li>name1, character</li>
+                    <li>search_term, character</li>
+                    <li>account_group, character</li>
+                    <li>langu, character</li>
+                    <li>country, character</li>
+                    <li>region, character</li>
+                    <li>city, character</li>
+                    <li>city_postal_code, character</li>
+                    <li>house_number, character</li>
+                    <li>street, character</li>
+                    <li>longitude, numeric</li>
+                    <li>latitude, numeric</li>
+                    <li>telephone_number, character</li>
+                    <li>smtp_address, character</li>
+                    <li>tax_number, character</li>
+                    <li>tax_jurisdiction, character</li>
+                  </ul>
+                </p>
+                <p>The table is saved as a csv file for loading using the built-in support of <a href="https://d3js.org/">d3.js</a>. All commas within a data value is removed using the 'Find and Replace' function of any spreadsheet. All characters that are not in UTF-8 format are also replaced appropriately.</p>
+                <p class="lead"></br>The Bubble Chart</p>
+                <p>The different dates on which vendor records were created are plotted in the bubble chart. The radius of each bubble displays the number of records created in that day. A relatively large circle would indicate a day where there was a massive number of creations. This should coincide with a major activity such as a data migration.</p>
+                <p>Putting the mouse pointer over the green circle will reveal a tooltip with the text for the number of vendors created (25) and the date of creation (Jan 01 2016). Clicking it will automatically change all other data in the web page. The topmost line now reads “Vendor Address Data 25 selected out of 100 records Reset All.” The table at the bottom show only the 25 records that were created on 2016-01-01.</p>
+                <p style="border-style: solid; border-width: 1px; border-color: lightgrey;"><img src="imgCrossfilter/bubbles.jpg"/></p>
+                <p class="lead"></br>Bar Chart as a filter</p>
+                <p>Right below the bubble chart is a bar chart that was made thin enough to act as a range filter. A selection is made by sliding the left slider thumb to the desired lower limit and the right slider thumb to the desired upper limit. The image below shows the selection text as [12/31/2015 -> 12/31/2016] for 64 records. The bubble chart, in turn, displays only the circles within that range. All of the different ways to break down the 64 records created in 2016 are shown in the 14 row charts.</p>
+                <p style="border-style: solid; border-width: 1px; border-color: lightgrey;"><img src="imgCrossfilter/oneyear.jpg"/></p>
+                <p class="lead"></br>Filtering with the other fields</p>
+                <p>Here is an example that uses the row charts that represent fields for filtering the table.</p>
+                <div style="border-style: solid; border-width: 1px; border-color: lightgrey;">
+                <p style="margin-left: 10px; margin-top: 10px; margin-right: 10px; border-color: #333;">
+                  Initially, 67 of the 100 records are shown as not having entries in the tax jurisdiction field.</br>
+                  This would be expected of vendors from Canada but not those from the United States.
+                  <img src="imgCrossfilter/jurisdiction329x97.jpg"/></br>
+                  Clicking on the box labelled "null: 67" of the 'Jurisdiction' row chart reveals that 12 of the 67 do not have tax numbers as well. The converse of the revelation is that 2 of the 14 records that do not have tax numbers are filled with tax jurisdictions.</br>
+                  <img src="imgCrossfilter/tax329x97.jpg"/></br>
+                  A subsequent selection of the box now labelled "null: 12" of the 'Tax' row chart changes the breakdown of the 'Vendors by Country field' chart. It now shows that, out of the 12 records not having tax numbers and tax jurisdictions, 5 are vendors from Canada and 4 are vendors from the United States.</br>
+                  <img src="imgCrossfilter/ustaxjurisdiction562x275.jpg"/></br>
+                  Clicking on the row for "United States" in the chart 'Vendors by Country field' confirms that all 4 of these do not have tax numbers and tax jurisdictions with both the 'Tax' and 'Jurisdiction' row charts having boxes labelled "null: 4."</br>
+                  <img src="imgCrossfilter/four489x331.jpg"/>
+                </p>
+              </div>
+                <p class="lead"></br>Next steps</p>
+                <p>An improvement that will be made to this crossfilter would be the use of regular expressions to interrogate each field for compliance to data standards. For example, a postal code of a Canadian address should be a combination of letter, digit, letter, space, digit, letter, digit in that order.</p>
+
+                <hr>
+
+                <!-- Blog Comments -->
+
+                <!-- Comments Form -->
+                <!--<div class="well">
+                    <h4>Leave a Comment:</h4>
+                    <form role="form">
+                        <div class="form-group">
+                            <textarea class="form-control" rows="3"></textarea>
+                        </div>
+                        <button type="submit" class="btn btn-primary">Submit</button>
+                    </form>
+                </div> -->
+
+                <hr>
+
+                <!-- Posted Comments -->
+
+                <!-- Comment -->
+                <!-- <div class="media">
+                    <a class="pull-left" href="#">
+                        <img class="media-object" src="http://placehold.it/64x64" alt="">
+                    </a>
+                    <div class="media-body">
+                        <h4 class="media-heading">Start Bootstrap
+                            <small>August 25, 2014 at 9:30 PM</small>
+                        </h4>
+                        Cras sit amet nibh libero, in gravida nulla. Nulla vel metus scelerisque ante sollicitudin commodo. Cras purus odio, vestibulum in vulputate at, tempus viverra turpis. Fusce condimentum nunc ac nisi vulputate fringilla. Donec lacinia congue felis in faucibus.
+                    </div>
+                </div> -->
+
+                <!-- Comment -->
+                <!-- <div class="media">
+                    <a class="pull-left" href="#">
+                        <img class="media-object" src="http://placehold.it/64x64" alt="">
+                    </a>
+                    <div class="media-body">
+                        <h4 class="media-heading">Start Bootstrap
+                            <small>August 25, 2014 at 9:30 PM</small>
+                        </h4>
+                        Cras sit amet nibh libero, in gravida nulla. Nulla vel metus scelerisque ante sollicitudin commodo. Cras purus odio, vestibulum in vulputate at, tempus viverra turpis. Fusce condimentum nunc ac nisi vulputate fringilla. Donec lacinia congue felis in faucibus. -->
+                        <!-- Nested Comment -->
+                        <!-- <div class="media">
+                            <a class="pull-left" href="#">
+                                <img class="media-object" src="http://placehold.it/64x64" alt="">
+                            </a>
+                            <div class="media-body">
+                                <h4 class="media-heading">Nested Start Bootstrap
+                                    <small>August 25, 2014 at 9:30 PM</small>
+                                </h4>
+                                Cras sit amet nibh libero, in gravida nulla. Nulla vel metus scelerisque ante sollicitudin commodo. Cras purus odio, vestibulum in vulputate at, tempus viverra turpis. Fusce condimentum nunc ac nisi vulputate fringilla. Donec lacinia congue felis in faucibus.
+                            </div>
+                        </div> -->
+                        <!-- End Nested Comment -->
+                    <!--</div>
+                </div>-->
+
+            </div>
+
+            <!-- Blog Sidebar Widgets Column -->
+            <!-- <div class="col-md-4"> -->
+
+                <!-- Blog Search Well -->
+                <!-- <div class="well">
+                    <h4>Blog Search</h4>
+                    <div class="input-group">
+                        <input type="text" class="form-control">
+                        <span class="input-group-btn">
+                            <button class="btn btn-default" type="button">
+                                <span class="glyphicon glyphicon-search"></span>
+                        </button>
+                        </span>
+                    </div> -->
+                    <!-- /.input-group -->
+                <!-- </div> -->
+
+                <!-- Blog Categories Well -->
+                <!-- <div class="well">
+                    <h4>Blog Categories</h4>
+                    <div class="row">
+                        <div class="col-lg-6">
+                            <ul class="list-unstyled">
+                                <li><a href="#">Category Name</a>
+                                </li>
+                                <li><a href="#">Category Name</a>
+                                </li>
+                                <li><a href="#">Category Name</a>
+                                </li>
+                                <li><a href="#">Category Name</a>
+                                </li>
+                            </ul>
+                        </div>
+                        <div class="col-lg-6">
+                            <ul class="list-unstyled">
+                                <li><a href="#">Category Name</a>
+                                </li>
+                                <li><a href="#">Category Name</a>
+                                </li>
+                                <li><a href="#">Category Name</a>
+                                </li>
+                                <li><a href="#">Category Name</a>
+                                </li>
+                            </ul>
+                        </div>
+                    </div> -->
+                    <!-- /.row -->
+                <!-- </div> -->
+
+                <!-- Side Widget Well -->
+                <!--<div class="well">
+                    <h4>Side Widget Well</h4>
+                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Inventore, perspiciatis adipisci accusamus laudantium odit aliquam repellat tempore quos aspernatur vero.</p>
+                </div>
+
+            </div> -->
+
+        </div>
+        <!-- /.row -->
+
+        <hr>
+
+        <!-- Footer -->
+        <footer>
+            <div class="row">
+                <div class="col-lg-12">
+                    <p>&copy; Mark Alabanza 2016 &copy; markviii8 2016</p>
+                </div>
+            </div>
+            <!-- /.row -->
+        </footer>
+
+    </div>
+    <!-- /.container -->
+
+    <!-- jQuery -->
+    <script src="js/jquery.js"></script>
+
+    <!-- Bootstrap Core JavaScript -->
+    <script src="js/bootstrap.min.js"></script>
+
+</body>
+
+</html>
