@@ -92,33 +92,71 @@
 
                 <!-- Post Content -->
 
-                <p>Click <a href="htmlParallelCoords/pcoords.html" target="_blank"> here </a>for a live demo of the visualization. Please let <a href="https://twitter.com/markviii8" target="_blank">me</a> know of any issues in loading the web page.</p>
-                <p class="lead"></br>Visualizing Missing Data</p>
-                <p>This is an implementation of the native crossfilter support in the <a href="https://dc-js.github.io/dc.js/" target="_blank">dc.js</a> javascript charting library. The application is on a typical table of addresses extracted from a database that supports an ERP system. This provides a view of that table with the ability to filter the data through multiple columns.</p>
-                <p>Initial input into the vendor master data is controlled by field interrogation techniques such as missing data checks and zero-value checks. However, subsequent actions on the database may result in unintended changes to data. Data migration, version updates, and data scrubbing are some of the situations when data is vulnerable to this.</p>
-                <p class="lead"></br>The Data</p>
-                <p>The table is saved as a csv file for loading using the built-in support of <a href="https://d3js.org/">d3.js</a>. All commas within a data value is removed using the 'Find and Replace' function of any spreadsheet. All characters that are not in UTF-8 format are also replaced appropriately.</p>
-                <p class="lead"></br>The Bubble Chart</p>
-                <p>The different dates on which vendor records were created are plotted in the bubble chart. The radius of each bubble displays the number of records created in that day. A relatively large circle would indicate a day where there was a massive number of creations. This should coincide with a major activity such as a data migration.</p>
-                <p>Putting the mouse pointer over the green circle will reveal a tooltip with the text for the number of vendors created (25) and the date of creation (Jan 01 2016). Clicking it will automatically change all other data in the web page. The topmost line now reads “Vendor Address Data 25 selected out of 100 records Reset All.” The table at the bottom show only the 25 records that were created on 2016-01-01.</p>
+                <p>Click <a href="htmlParallelCoords/pcoords.html" target="_blank"> here </a>for a live demo of the visualization. It takes a while to load the 6,418 records of the data table. Please let <a href="https://twitter.com/markviii8" target="_blank">me</a> know of any other issues in loading the web page.</p>
+                <p class="lead"></br>The frameworks</p>
+                <p>Popular frameworks applicable to cyber security include ISO/IEC 27001, the NIST Cybersecurity Framework, and ISACA’s COBIT 5. This visualization shows the mapping of prescribed activities of each framework to the others.</p>
+                <p class="lead"></br>The mapping</p>
+                <p>In the image below, ‘ISO/IEC 27001 A.12.1.3 Capacity Management’ is mapped to ‘NIST Cyber Security Framework ID.DE-4 Dependencies and critical functions for delivery of critical services are established.’ That, in turn, is mapped to the following 33 COBIT 5 Process Enablers.</p>
+                <ul>
+                  <li>EDM01.01 Evaluate the governance system.</li>
+                  <li>APO01.01 Define the organisational structure.</li>
+                  <li>APO02.03 Define the target IT capabilities.</li>
+                  <li>APO02.04 Conduct a gap analysis.</li>
+                  <li>APO02.05 Define the strategic plan and road map.</li>
+                  <li>APO03.05 Provide enterprise architecture services.</li>
+                  <li>APO04.03 Monitor and scan the technology environment.</li>
+                  <li>APO04.04 Assess the potential of emerging technologies and innovation ideas.</li>
+                  <li>APO04.05 Recommend appropriate further initiatives.</li>
+                  <li>BAI02.01 Define and maintain business functional and technical requirements.</li>
+                  <li>BAI02.02 Perform a feasibility study and formulate alternative solutions.</li>
+                  <li>BAI02.03 Manage requirements risk.</li>
+                  <li>BAI02.04 Obtain approval of requirements and solutions.</li>
+                  <li>BAI03.01 Design high-level solutions.</li>
+                  <li>BAI03.02 Design detailed solution components.</li>
+                  <li>BAI03.03 Develop solution components.</li>
+                  <li>BAI03.04 Procure solution components.</li>
+                  <li>BAI03.05 Build solutions.</li>
+                  <li>BAI03.06 Perform quality assurance.</li>
+                  <li>BAI03.09 Manage changes to requirements.</li>
+                  <li>BAI03.10 Maintain solutions.</li>
+                  <li>BAI04.01 Assess current availability, performance and capacity and create a baseline.</li>
+                  <li>BAI04.02 Assess business impact.</li>
+                  <li>BAI04.03 Plan for new or changed service requirements.</li>
+                  <li>BAI04.04 Monitor and review availability and capacity.</li>
+                  <li>BAI04.05 Investigate and address availability, performance and capacity issues.</li>
+                  <li>BAI05.05 Enable operation and use.</li>
+                  <li>BAI07.02 Plan business process, system and data conversion.</li>
+                  <li>BAI07.03 Plan acceptance tests.</li>
+                  <li>BAI07.04 Establish a test environment.</li>
+                  <li>BAI07.05 Perform acceptance tests.</li>
+                  <li>BAI07.06 Promote to production and manage releases.</li>
+                  <li>BAI07.08 Perform a post-implementation review.</li>
+                </ul>
+              </br>
                 <p><img src="imgParallelCoords/sample689x918.jpg"/></p>
                 <p class="lead"></br>Walkthrough of one sample</p>
-                <p>Here is an example that uses the row charts that represent fields for filtering the table.</p>
+                <p>Here is how the visualization isolated the mapping for A.12.1.3.</p>
                 <div style="border-style: solid; border-width: 1px; border-color: lightgrey;">
                 <p style="margin-left: 10px; margin-top: 10px; margin-right: 10px; border-color: #333;">
-                  Initially, 67 of the 100 records are shown as not having entries in the tax jurisdiction field.</br>
-                  This would be expected of vendors from Canada but not those from the United States.</br>
+                  When the mouse pointer is close to one of the vertical lines, it changes to a crosshair image.</br>
+                  Bring the crosshair to the tick mark (or group of consecutive tick marks) that would be isolated.</br>
+                  Hold down the right mouse button and drag the pointer to create a grey rectangle on the selection.</br>
                   <img src="imgParallelCoords/startSelect327x96.jpg"/>
                   <img src="imgParallelCoords/crosshair96x96.png"/></br>
-                  A subsequent selection of the box now labelled "null: 12" of the 'Tax' row chart changes the breakdown of the 'Vendors by Country field' chart. It now shows that, out of the 12 records not having tax numbers and tax jurisdictions, 5 are vendors from Canada and 4 are vendors from the United States.</br>
+                </br>
+                  The grey rectangular selection can be moved to another tick mark (or group of tick marks).</br>
+                  Put the mouse pointer on the current grey rectangular selection until it changes to a 'move' image.</br>
+                  Hold down the right mouse button and drag the 'move' image and rectangle to the desired tick mark/s.</br>
                   <img src="imgParallelCoords/dragSelect327x95.jpg"/>
                   <img src="imgParallelCoords/dragSelect95x95.jpg"/></br>
-                  A subsequent selection of the box now labelled "null: 12" of the 'Tax' row chart changes the breakdown of the 'Vendors by Country field' chart. It now shows that, out of the 12 records not having tax numbers and tax jurisdictions, 5 are vendors from Canada and 4 are vendors from the United States.</br>
-                  <img src="imgParallelCoords/encore359x116.jpg"/>                  
+                </br>
+                  Increase or decrease the height of the grey rectangular section by dragging its top margin or bottom margin.</br>
+                  Selections can be marked on each of the three vertical lines individually or simultaneously.
+                  <img src="imgParallelCoords/encore359x116.jpg"/>
                 </p>
               </div>
                 <p class="lead"></br>Next steps</p>
-                <p>An improvement that will be made to this crossfilter would be the use of regular expressions to interrogate each field for compliance to data standards. For example, a postal code of a Canadian address should be a combination of letter, digit, letter, space, digit, letter, digit in that order.</p>
+                <p>Selections can be improved by simply putting the mouse pointer on a text or a line.</p>
 
                 <hr>
 
